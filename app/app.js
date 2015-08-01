@@ -14,6 +14,8 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -22,9 +24,12 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/public'));
 
 app.set("view options", {layout: false});
 
@@ -72,3 +77,8 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+app.get('*', function(req, res) {
+  res.sendfile('./public/home.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+

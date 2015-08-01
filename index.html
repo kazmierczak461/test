@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+
+  <link rel="stylesheet" href="app.css">
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/home">Home</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#/projects">Projects</a></li>
+          <li><a href="#/tasks">Tasks</a></li>
+          <li><a href="#/calendar">Calendar</a></li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#/dashboard">Dashboard</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div ng-view></div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+
+  <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-calendar/calendar.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="app.js"></script>
+  <script src="pages/Projects/projects.js"></script>
+  <script src="pages/Tasks/tasks.js"></script>
+  <script src="pages/Dashboard/dashboard.js"></script>
+  <script src="pages/Home/home.js"></script>
+  <script src="pages/Calendar/calendar.js"></script>
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="bower_components/angular-cookie/angular-cookie.min.js"></script>
+  <!--<script src="bower_components/ng-token-auth/dist/ng-token-auth.min.js"></script>
+  <script src="bower_components/ng-flow/dist/ng-flow.min.js"></script>
+  <script src="bower_components/ng-flow/dist/ng-flow-standalone.min.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+  <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+  <script src="bower_components/ng-file-upload-shim/ng-file-upload.min.js"></script>-->
+
+
+</body>
+</html>
